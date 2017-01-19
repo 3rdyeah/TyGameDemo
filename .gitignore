@@ -53,9 +53,5 @@ Debug/TyGameDemo.tlog/unsuccessfulbuild
 *.idb
 *.ipch
 *.exe
-Debug/ClientTest.ilk
 *.ilk
-*.filters
-*.filters
-ClientTest/ClientTest.vcxproj.filters
 *.opensdf
