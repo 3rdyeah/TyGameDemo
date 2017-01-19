@@ -1,0 +1,13 @@
+HostUrl=www.baidu.com
+HostAddr=127.0.0.1
+HostPort=9527
+
+ConnPoolMin=2
+ConnPoolMax=3000
+UsedCountMax=5
+
+DbIp=127.0.0.1
+DbUser=root
+DbPassword=1
+DbName=hqg
+DbPort=3306
