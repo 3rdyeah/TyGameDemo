@@ -55,3 +55,7 @@ Debug/TyGameDemo.tlog/unsuccessfulbuild
 *.exe
 *.ilk
 *.opensdf
+*.pch
+*.suo
+.vs/TyGameDemo/v14/.suo
+*.suo

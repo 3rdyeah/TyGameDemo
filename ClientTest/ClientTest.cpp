@@ -95,23 +95,18 @@ int main()
 		return 0;
 	}
 
-	//thread pThread_fst(&recvmsg);
-	//pThread_fst.detach();
-	//thread pThread_snd(&sendmsg);
-	//pThread_snd.detach();
+	thread pThreadRecv(&recvmsg);
+	pThreadRecv.detach();
 
 	while (true)
 	{
 		int nRet = 0;
 		cout << "向服务器发送消息: ";
-		cin >> buffer;
+		cin.getline(buffer, 1024);
+		mtx.try_lock();
 		send(sockCli, buffer, strlen(buffer) + 1, 0);
 		memset(buffer, 0, 1024);
-		nRet = recv(sockCli, buffer, 1024, 0);
-		if (nRet > 0)
-		{
-			cout << "来自服务器的消息: " << buffer << endl;
-		}
+		mtx.unlock();
 	}
 
 	closesocket(sockCli);

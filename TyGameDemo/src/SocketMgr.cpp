@@ -84,20 +84,6 @@ namespace tyGame {
 				memcpy(pData + nTotalLen - nLen, szBuffer, strlen(szBuffer));
 				logger->print(LOG_TYPE_INFO, "recv data from %s : %s", szCliAddr, szBuffer);
 			}
-			//else if (nLen == -1)
-			//{
-			//	nRecvCnt++;
-			//}
-			//nRecvCnt = nRecvCnt > 2 ? 0 : nRecvCnt;
-
-			//if (nRecvCnt == 2 && nTotalLen > 0)
-			//{
-			//	logger->print(LOG_TYPE_INFO, "recved total data from %s : %s", szCliAddr, pData);
-			//	send(sockCli, MSG_RECVD_FLAG, strlen(MSG_RECVD_FLAG), 0);
-			//	memset(szData, 0, BUFFER_SIZE);
-			//	nTotalLen = 0;
-			//	nRecvCnt = 0;
-			//}
 		}
 	}
 
