@@ -76,7 +76,7 @@ void sendmsg()
 	{
 		int nRet = 0;
 		cout << "向服务器发送消息: ";
-		cin >> buffer;
+		cin.getline(buffer, 1024);
 		if (strlen(buffer) > 0)
 		{
 			mtx.try_lock();
@@ -103,6 +103,10 @@ int main()
 		int nRet = 0;
 		cout << "向服务器发送消息: ";
 		cin.getline(buffer, 1024);
+		if (strcmp(buffer, "exit") == 0)
+		{
+			break;
+		}
 		mtx.try_lock();
 		send(sockCli, buffer, strlen(buffer) + 1, 0);
 		memset(buffer, 0, 1024);

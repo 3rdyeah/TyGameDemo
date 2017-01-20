@@ -84,6 +84,12 @@ namespace tyGame {
 				memcpy(pData + nTotalLen - nLen, szBuffer, strlen(szBuffer));
 				logger->print(LOG_TYPE_INFO, "recv data from %s : %s", szCliAddr, szBuffer);
 			}
+			else if (nLen == 0)
+			{
+				closeCliSocket(sockCli);
+				logger->print(LOG_TYPE_INFO, "a connection from %s has shutdown", szCliAddr);
+				break;
+			}
 		}
 	}
 
@@ -225,8 +231,18 @@ namespace tyGame {
 		}
 	}
 
-	void CSocketMgr::closeCliSocket(SOCKET &cliSock)
+	void CSocketMgr::closeCliSocket(SOCKET cliSock)
 	{
+		vector<SOCKET>::iterator iter = m_vecSockClient.begin();
+		while (iter != m_vecSockClient.end())
+		{
+			if (*iter == cliSock)
+			{
+				m_vecSockClient.erase(iter);
+				break;
+			}
+			iter++;
+		}
 		if (cliSock != NULL)
 		{
 			closesocket(cliSock);

@@ -54,7 +54,7 @@ namespace tyGame {
 		int broadcastMessage(char* szMsg);
 
 		void closeServSocket();
-		void closeCliSocket(SOCKET &cliSock);
+		void closeCliSocket(SOCKET cliSock);
 	};
 }
 

@@ -154,6 +154,7 @@
     <ClCompile Include="src\Common.cpp" />
     <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Reactor.cpp" />
     <ClCompile Include="src\SocketMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="inc\DatabaseMgr.h" />
     <ClInclude Include="inc\Common.h" />
     <ClInclude Include="inc\Config.h" />
+    <ClInclude Include="inc\Reactor.h" />
     <ClInclude Include="inc\TTyMalloc.h" />
     <ClInclude Include="inc\GlobalDef.h" />
     <ClInclude Include="inc\Logger.h" />

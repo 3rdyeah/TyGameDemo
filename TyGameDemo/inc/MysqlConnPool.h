@@ -8,7 +8,7 @@ Mysql¡¨Ω”≥ÿ
 
 namespace tyGame {
 
-	class CMysqlConnPool : public TTyBasePool<CDbConnection>
+	class CMysqlConnPool : virtual public TTyBasePool<CDbConnection>
 	{
 	private:
 		char* m_szDbUser;

@@ -6,7 +6,7 @@
 
 namespace tyGame
 {
-	class CDbConnPool : public TTyBasePool<void>
+	class CDbConnPool : virtual public TTyBasePool<void>
 	{
 	public:
 		CDbConnPool();
