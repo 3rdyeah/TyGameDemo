@@ -5,11 +5,14 @@
 
 namespace tyGame {
 
-#define LOG_INFO_DIR	"../logs/info"
-#define LOG_DEBUG_DIR	"../logs/debug"
-#define LOG_ERROR_DIR	"../logs/error"
+#define LOG_INFO_DIR	"./logs/info/"
+#define LOG_DEBUG_DIR	"./logs/debug/"
+#define LOG_ERROR_DIR	"./logs/error/"
 
 #define LOG_BUFFER_LEN 1024
+#define LOG_FILE_PATH_LEN 64
+#define LOG_TIME_LEN 32
+
 #define EXT "[] "
 
 	typedef enum E_LOG_TYPE
@@ -29,6 +32,8 @@ namespace tyGame {
 		~CLogger();
 
 	public:
+		bool InitDir();
+		void LogToFile(E_LOG_TYPE eLogType, char* szLog);
 		void print(E_LOG_TYPE eLogType, char* fmt, ...);
 	};
 }

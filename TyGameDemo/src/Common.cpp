@@ -52,17 +52,38 @@ namespace tyGame {
 		return true;
 	}
 
-	//bool split(const char* szSrc, map<string, map<string, string>> &map, const char* szDelim)
-	//{
-	//	if (!szSrc || strlen(szSrc) == 0 || !szDelim || strlen(szDelim) == 0)
-	//	{
-	//		return false;
-	//	}
+	bool CreateDir(char* szDirPath)
+	{
+		int nOffset = 0;
+		int nRet = -1;
+		char* szSubPath = szDirPath;
+		char szFileDir[MAX_PATH_LEN] = { 0 };
+		while (szSubPath = strstr(szSubPath, "/"))
+		{
+			szSubPath++;
+			memset(szFileDir, 0, MAX_PATH_LEN);
+			nOffset = szSubPath - szDirPath - 1;
+			memcpy(szFileDir, szDirPath, nOffset);
+			if (-1 == _access(szFileDir, 0))
+			{
+				mkdir(szFileDir);
+			}
+		}
+		if (-1 == _access(szFileDir, 0))
+		{
+			return false;
+		}
+		return true;
+	}
 
-	//	string szKey, szItem, szValue, szTmp;
-	//	char szArr[GAME_LINE_SIZE] = {0};
-	//	memcpy(szArr, szSrc, strlen(szSrc));
+	bool CheckDir(char* szDirPath)
+	{
+		if (-1 == _access(szDirPath, 0))
+		{
+			return CreateDir(szDirPath);
+		}
 
-	//	return true;
-	//}
+		return true;
+	}
+	
 }

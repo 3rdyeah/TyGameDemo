@@ -100,5 +100,6 @@
     <Text Include="etc\hello.txt">
       <Filter>etc</Filter>
     </Text>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

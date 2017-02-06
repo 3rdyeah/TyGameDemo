@@ -1,4 +1,4 @@
-#include "Codec.h"
+ï»¿#include "Codec.h"
 #include "Logger.h"
 #include "Config.h"
 #include "SocketMgr.h"
@@ -8,8 +8,13 @@ using namespace tyGame;
 
 int main(int argc, char const *argv[])
 {
-	//´´½¨mainº¯Êılogger
+	//åˆ›å»ºmainå‡½æ•°logger
 	CLogger* logger = new CLogger("main");
+	if (!logger->InitDir())
+	{
+		logger->print(LOG_TYPE_ERROR, "init log file failed");
+		return 1;
+	}
 
 	CConfig* config = CConfig::getInstance();
 	config->init();
@@ -34,7 +39,7 @@ int main(int argc, char const *argv[])
 	GAME_CONFIG_MAP cfgHello;
 	config->analysisConfigFile("./etc/hello.txt", cfgHello);
 
-	/*ÅäÖÃ±í¶ÁÈ¡²âÊÔ*/
+	/*é…ç½®è¡¨è¯»å–æµ‹è¯•*/
 	const char* value1 = (char*)CFG_GETVALUE(cfgHello, "2", "hello");
 	const char* value2 = (char*)CFG_GETVALUE(cfgHello, 2, "hello");
 

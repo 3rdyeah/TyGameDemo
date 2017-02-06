@@ -2,6 +2,7 @@
 #include <fstream>
 #include <winsock2.h>
 #include <Windows.h>
+#include <direct.h>
 #include "GlobalDef.h"
 #include "TTyMalloc.h"
 #include "Common.h"
