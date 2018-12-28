@@ -1,5 +1,5 @@
 /*
-数据库连接池
+鏁版嵁搴撹繛鎺ユ睜
 */
 #pragma once
 #include "TyBasePool.h"

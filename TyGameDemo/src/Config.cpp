@@ -85,7 +85,7 @@ namespace tyGame {
 		return nullptr;
 	}
 
-	/*½âÎöÓÎÏ·ÅäÖÃÎÄ¼ş*/
+	/*è§£ææ¸¸æˆé…ç½®æ–‡ä»¶*/
 	bool CConfig::analysisConfigFile(const char* szFilePath, GAME_CONFIG_MAP &mapConfig)
 	{
 		do
@@ -139,7 +139,7 @@ namespace tyGame {
 		return false;
 	}
 
-	/*´ÓÓÎÏ·ÅäÖÃÎÄ¼şÈ¡Öµ*/
+	/*ä»æ¸¸æˆé…ç½®æ–‡ä»¶å–å€¼*/
 	const void* CConfig::getValue(const GAME_CONFIG_MAP &mapConfig, int nIndex, char* szItemName) const
 	{
 		char szIndex[16] = {0};
@@ -147,7 +147,7 @@ namespace tyGame {
 		return getValue(mapConfig, szIndex, szItemName);
 	}
 
-	/*´ÓÓÎÏ·ÅäÖÃÎÄ¼şÈ¡Öµ*/
+	/*ä»æ¸¸æˆé…ç½®æ–‡ä»¶å–å€¼*/
 	const void* CConfig::getValue(const GAME_CONFIG_MAP &mapConfig, const char* szIndex, char* szItemName) const
 	{
 		if (mapConfig.size() <= 0 || 

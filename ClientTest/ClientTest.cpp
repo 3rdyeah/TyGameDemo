@@ -23,7 +23,7 @@ bool initWsa()
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			cout << "WSAÆô¶¯Ê§°Ü, ´íÎó´úÂë: " << GetLastError() << endl;
+			cout << "WSAå¯åŠ¨å¤±è´¥, é”™è¯¯ä»£ç : " << GetLastError() << endl;
 			WSACleanup();
 			break;
 		}
@@ -31,7 +31,7 @@ bool initWsa()
 		sockCli = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 		if (sockCli == NULL)
 		{
-			cout << "´´½¨socketÊ§°Ü, ´íÎó´úÂë: " << GetLastError() << endl;
+			cout << "åˆ›å»ºsocketå¤±è´¥, é”™è¯¯ä»£ç : " << GetLastError() << endl;
 			break;
 		}
 		u_long mode = 1;
@@ -43,7 +43,7 @@ bool initWsa()
 		sockAddrInServ.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
 
 		connect(sockCli, (sockaddr*)&sockAddrInServ, sizeof(sockAddrInServ));
-		cout << "Á¬½Ó·þÎñÆ÷³É¹¦!" << endl;
+		cout << "è¿žæŽ¥æœåŠ¡å™¨æˆåŠŸ!" << endl;
 
 		return true;
 	} while (false);
@@ -62,7 +62,7 @@ void recvmsg()
 		if (nRet != 0 && strlen(buffer) > 0)
 		{
 			mtx.try_lock();
-			cout << "À´×Ô·þÎñÆ÷µÄÏûÏ¢: " << buffer << endl;
+			cout << "æ¥è‡ªæœåŠ¡å™¨çš„æ¶ˆæ¯: " << buffer << endl;
 			memset(buffer, 0, 1024);
 			mtx.unlock();
 		}
@@ -75,7 +75,7 @@ void sendmsg()
 	while (true)
 	{
 		int nRet = 0;
-		cout << "Ïò·þÎñÆ÷·¢ËÍÏûÏ¢: ";
+		cout << "å‘æœåŠ¡å™¨å‘é€æ¶ˆæ¯: ";
 		cin.getline(buffer, 1024);
 		if (strlen(buffer) > 0)
 		{
@@ -101,7 +101,7 @@ int main()
 	while (true)
 	{
 		int nRet = 0;
-		cout << "Ïò·þÎñÆ÷·¢ËÍÏûÏ¢: ";
+		cout << "å‘æœåŠ¡å™¨å‘é€æ¶ˆæ¯: ";
 		cin.getline(buffer, 1024);
 		if (strcmp(buffer, "exit") == 0)
 		{

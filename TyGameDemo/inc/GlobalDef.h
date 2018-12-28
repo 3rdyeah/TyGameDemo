@@ -1,5 +1,5 @@
 /*
-全局定义
+鍏ㄥ眬瀹氫箟
 */
 #pragma once
 #include <stdio.h>

@@ -1,4 +1,4 @@
-﻿#include "Codec.h"
+#include "Codec.h"
 #include "Logger.h"
 #include "Config.h"
 #include "SocketMgr.h"

@@ -1,5 +1,5 @@
 /*
-��Ϣ���ܺͽ���
+消息加密和解密
 */
 #pragma once
 #include<stdlib.h>

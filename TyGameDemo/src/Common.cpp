@@ -5,7 +5,7 @@ using namespace std;
 
 namespace tyGame {
 
-	/*½âÎöÓÎÏ·ÅäÖÃ±íĞĞ×Ö·û´®*/
+	/*è§£ææ¸¸æˆé…ç½®è¡¨è¡Œå­—ç¬¦ä¸²*/
 	bool split(const char* szSrc, vector<string> &vec, const char* szDelim)
 	{
 		int nStart = 0;
@@ -30,7 +30,7 @@ namespace tyGame {
 		return false;
 	}
 
-	/*½âÎö¼üÖµ¹ØÏµÒ»¶ÔÒ»×Ö·û´®*/
+	/*è§£æé”®å€¼å…³ç³»ä¸€å¯¹ä¸€å­—ç¬¦ä¸²*/
 	bool split(const char* szSrc, map<string, string> &map, const char* szDelim)
 	{
 		if (!szSrc || strlen(szSrc) == 0 || !szDelim || strlen(szDelim) == 0)
